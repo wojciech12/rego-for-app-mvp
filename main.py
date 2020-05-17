@@ -18,9 +18,7 @@ user_data = {
 		"roles": ["dev"]
 	},
 	"features": {
-		"f1": {
-			"name": "view.B"
-		}
+		"1": {"name": "tasks.view.B"}
 	}
 }
 
@@ -37,7 +35,9 @@ teams = input.session.teams
 taskview = "deny" {
 	input.session.username == "w2b"
 } else = "allow" {
-	teams[_] == "hr"
+	teams[_] == "hr3"
+} else = "allow" {
+	input.features[_].name == "tasks.view.B"
 }
 """ % company
 
