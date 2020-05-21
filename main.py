@@ -1,6 +1,7 @@
 import json
 import requests
 
+# https://blog.openpolicyagent.org/rego-design-principle-1-syntax-should-reflect-real-world-policies-e1a801ab8bfb
 from rego import ast, walk
 
 company = "wbpro"
@@ -31,6 +32,7 @@ package %s
 
 teams = input.session.teams
 
+
 # Allow HR to view the tasks
 taskview = "deny" {
 	input.session.username == "w2b"
@@ -51,6 +53,6 @@ resp = requests.post("http://127.0.0.1:8181/v1/data/" + company,
 resp.raise_for_status()
 
 print(resp.json())
-
-
-
+result = resp.json()['result']
+if result['taskview'] == 'allow':
+	print("New shiny feature!")
