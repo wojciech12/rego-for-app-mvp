@@ -40,11 +40,17 @@ What can we learn from https://kubernetes.io/docs/reference/access-authn-authz/r
 
 for testing:
 ```
-curl '127.0.0.1:5000?username=natalia&company=acme'
-curl '127.0.0.1:5000?username=natalia&company=acme&local_time='$(date --rfc-3339=seconds | sed 's/ /T/')
+# client that uses our app
+$ curl '127.0.0.1:5000?username=natalia&company=acme'
+$ curl '127.0.0.1:5000?username=natalia&company=acme&local_time='$(date --rfc-3339=seconds | sed 's/ /T/')
+
+# admin
+$ curl '127.0.0.1:5000/admin?company=acme'
 ```
 
-Reference:
+You can validate the policy at: https://play.openpolicyagent.org/
+
+## Reference:
 
 - https://www.martinfowler.com/articles/feature-toggles.html
 - https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication
