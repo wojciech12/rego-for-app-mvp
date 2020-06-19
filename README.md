@@ -50,6 +50,39 @@ $ curl '127.0.0.1:5000/admin?company=acme'
 
 You can validate the policy at: https://play.openpolicyagent.org/
 
+## NOtes
+
+
+```
+package acme
+
+plan_features := [
+    "a", "b", "c", "d"
+]
+
+group_power = features  {
+    features := [
+        "a", "c"
+    ]
+   input.session.teams[_] == "admin"    
+}
+
+
+group_hr = features  {
+    features := [
+        "a", "b"
+    ]
+   input.session.teams[_] == "hr"    
+}
+
+group_reviewer = features  {
+    features := [
+        "d"
+    ]
+   input.session.teams[_] == "reviewer"    
+}
+```
+
 ## Reference:
 
 - https://www.martinfowler.com/articles/feature-toggles.html

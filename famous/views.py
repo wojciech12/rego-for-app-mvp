@@ -63,7 +63,6 @@ package %s
 
 teams = input.session.teams
 
-
 # Allow HR to view the tasks
 taskview = "allow" {
   input.session.username == "natalia"
