@@ -13,3 +13,6 @@ Reference:
 - https://www.martinfowler.com/articles/feature-toggles.html
 - https://developer.mozilla.org/en-US/docs/Learn/Server-side/Django/Authentication
 - https://docs.djangoproject.com/en/3.0/topics/auth/
+- https://github.com/rocket-internet-berlin/RocketBucket
+- https://livebook.manning.com/book/microservices-security-in-action/g-open-policy-agent/v-7/22
+- https://www.openpolicyagent.org/docs/latest/external-data/
