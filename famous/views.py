@@ -19,7 +19,7 @@ def hello():
     lt = frequest.args.get("local_time")
 
     request_dsc = {
-        "request_ip": request.remote_addr,
+        "request_ip": frequest.remote_addr,
         "request_country": "Poland",
         "timestamp_ns": "2121",
         "localtime": lt,
